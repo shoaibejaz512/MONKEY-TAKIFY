@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+  <!-- Mobile responsiveness -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.8/dist/lenis.css">
+  <title>Vite + React</title>
+
+  <!-- Optional: Basic styling for body -->
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background-color: #0f172a;
+      /* matches your dark theme */
+      color: white;
+    }
+
+    /* Optional: Loading animation styles */
+    #loading {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #0f172a;
+      z-index: 9999;
+    }
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid rgba(255, 255, 255, 0.2);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Loading screen (will hide when React mounts) -->
+  <div id="loading">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- React mount point -->
+  <div id="root"></div>
+
+  <!-- Vite entry -->
+  <script type="module" src="/src/main.jsx"></script>
+
+  <!-- Hide loading after React starts -->
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const root = document.getElementById("root");
+      const loading = document.getElementById("loading");
+
+      if (root && loading) {
+        // Wait for React to mount before hiding loader
+        requestAnimationFrame(() => {
+          loading.style.display = "none";
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>
