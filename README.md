@@ -29,7 +29,6 @@ shoaib-monkey-taskify.netlify.app
 🔗 **View Live Demo:**  
 👉 https://your-live-demo-link-here.com
 
-> Replace the link above with your deployed project (Vercel / Netlify / GitHub Pages)
 
 ---
 
