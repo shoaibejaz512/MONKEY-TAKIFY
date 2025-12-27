@@ -22,9 +22,8 @@ A modern, clean, and responsive **UI clone of Monkey Taskfy**, built to showcase
 - React (if applicable)  
 
 ---
-
-🔗 **View Live Demo:**  
-👉shoaib-monkey-taskify.netlify.app
+LIVE DEMO
+shoaib-monkey-taskify.netlify.app
 
 
 ---
